@@ -27,43 +27,43 @@ public class RestaurantReservation {
         this.personsQuantity = personsQuantity;
     }
 
-    public Long getId() {
+    protected Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    protected void setId(Long id) {
         this.id = id;
     }
 
-    public String getClientName() {
+    protected String getClientName() {
         return clientName;
     }
 
-    public void setClientName(String clientName) {
+    protected void setClientName(String clientName) {
         this.clientName = clientName;
     }
 
-    public LocalDateTime getDateTime() {
+    protected LocalDateTime getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
+    protected void setDateTime(LocalDateTime dateTime) {
         this.dateTime = dateTime;
     }
 
-    public int getPersonsQuantity() {
+    protected int getPersonsQuantity() {
         return personsQuantity;
     }
 
-    public void setPersonsQuantity(int personsQuantity) {
+    protected void setPersonsQuantity(int personsQuantity) {
         this.personsQuantity = personsQuantity;
     }
 
-    public boolean isChecked() {
+    protected boolean isChecked() {
         return checked;
     }
 
-    public void setChecked(boolean checked) {
+    protected void setChecked(boolean checked) {
         this.checked = checked;
     }
 

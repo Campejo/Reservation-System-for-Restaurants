@@ -5,54 +5,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class Restaurant {
-//    private Long id;
-//    private String restaurantName;
-//    private int desks;
-      private List<RestaurantReservation> restaurantReservesList = new ArrayList<>();
-//
-//    public Restaurant(Long id, String restaurantName, int desks) {
-//        this.id = id;
-//        this.restaurantName = restaurantName;
-//        this.desks = desks;
-//    }
 
-//    public Long getId() {
-//        return id;
-//    }
-//
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
-//
-//    public String getRestaurantName() {
-//        return restaurantName;
-//    }
-//
-//    public void setRestaurantName(String restaurantName) {
-//        this.restaurantName = restaurantName;
-//    }
-//
-//    public int getDesks() {
-//        return desks;
-//    }
-//
-//    public void setDesks(int desks) {
-//        this.desks = desks;
-//    }
+    private List<RestaurantReservation> restaurantReservesList = new ArrayList<>();
 
-    public List<RestaurantReservation> getRestaurantReservesList() {
-        return restaurantReservesList;
-    }
-
-    public void setRestaurantReservesList(List<RestaurantReservation> restaurantReservesList) {
-        this.restaurantReservesList = restaurantReservesList;
-    }
-
-    public List<RestaurantReservation> consultReservations() {
-        return restaurantReservesList;
-    }
-
-    public void reserve(String clientName, int persons, String dateAndHour, Long deskNumber) {
+    protected void reserve(String clientName, int persons, String dateAndHour, Long deskNumber) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         LocalDateTime dateTime = LocalDateTime.parse(dateAndHour, formatter);
         Iterator<RestaurantReservation> iterator = restaurantReservesList.iterator();
@@ -76,11 +32,11 @@ public class Restaurant {
 
     }
 
-    public List<RestaurantReservation> seeReserves() {
+    protected List<RestaurantReservation> seeReserves() {
         return restaurantReservesList;
     }
 
-    public void changeReserve(Long reserveId, String newDateTime) {
+    protected void changeReserve(Long reserveId, String newDateTime) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         LocalDateTime changedDateTime = LocalDateTime.parse(newDateTime, formatter);
         if (!restaurantReservesList.isEmpty()) {
@@ -95,7 +51,7 @@ public class Restaurant {
         }
     }
 
-    public void cancelReserve(Long reserveId) {
+    protected void cancelReserve(Long reserveId) {
         Scanner scanner = new Scanner(System.in);
         if (restaurantReservesList.isEmpty()) {
             throw new RuntimeException("Empty list");
@@ -117,11 +73,4 @@ public class Restaurant {
             }
         }
     }
-
-
-
-//    @Override
-//    public String toString() {
-//        return getRestaurantName();
-//    }
 }

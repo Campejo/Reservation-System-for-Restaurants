@@ -3,7 +3,9 @@ package com.myproject.model;
 import java.util.Scanner;
 
 public class Menu {
+
     Restaurant restaurant = new Restaurant();
+
     protected void menu() {
         Scanner scanner = new Scanner(System.in);
         boolean showMenu = true;
